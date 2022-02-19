@@ -1,14 +1,34 @@
 <template>
   <div class="AddStudent">
     <div class="student-form">
-      <input type="text" placeholder="student name" v-model="student.name" />
-      <input type="number" placeholder="roll no" v-model="student.roll" />
-      <input
-        type="number"
-        placeholder="enter class"
-        v-model="student.standard"
-      />
-      <input type="number " placeholder="enter marks" v-model="student.marks" />
+      <div class="input-name">
+        <input
+          type="text"
+          placeholder="student name"
+          v-model="student.name"
+          class="name"
+        />
+        <input
+          type="number"
+          placeholder="roll no"
+          v-model="student.roll"
+          class="roll"
+        />
+      </div>
+      <div class="input-class-marks">
+        <input
+          type="number"
+          placeholder="enter class"
+          v-model="student.standard"
+          class="class"
+        />
+        <input
+          type="number "
+          placeholder="enter marks"
+          v-model="student.marks"
+          class="marks"
+        />
+      </div>
       <button class="btn" @click="newStudent">add student</button>
     </div>
   </div>
@@ -40,4 +60,54 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.AddStudent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.student-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px groove;
+  width: 795px;
+  height: 406px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 26px 0px;
+}
+.name {
+  width: 202px;
+  height: 21px;
+  border-radius: 8px;
+  border: 1px groove;
+  margin-right: 20px;
+  margin-bottom: 11px;
+}
+.roll {
+  width: 202px;
+  height: 21px;
+  border-radius: 8px;
+  border: 1px groove;
+  margin-right: 20px;
+  margin-bottom: 11px;
+}
+.class {
+  width: 202px;
+  height: 21px;
+  border-radius: 8px;
+  border: 1px groove;
+  margin-right: 20px;
+  margin-bottom: 11px;
+}
+.marks {
+  width: 202px;
+  height: 21px;
+  border-radius: 8px;
+  border: 1px groove;
+  margin-right: 20px;
+  margin-bottom: 11px;
+}
+</style>

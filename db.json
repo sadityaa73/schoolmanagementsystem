@@ -1,4 +1,63 @@
 {
-    "students": [],
-    "teachers": []
+  "students": [
+    {
+      "Name": "aditya singh",
+      "Roll": "1",
+      "Standard": "12",
+      "Marks": "80",
+      "id": 1
+    },
+    {
+      "Name": " ravi parkash",
+      "Roll": "02",
+      "Standard": "11",
+      "Marks": "95",
+      "id": 2
+    },
+    {
+      "Name": " ravi parkash",
+      "Roll": "02",
+      "Standard": "11",
+      "Marks": "95",
+      "id": 3
+    },
+    {
+      "Name": "ramu",
+      "Roll": "02",
+      "Standard": "12",
+      "Marks": "87",
+      "id": 4
+    },
+    {
+      "Name": "ashu",
+      "Roll": "",
+      "Standard": "",
+      "Marks": "",
+      "id": 5
+    },
+    {
+      "Name": "ramu",
+      "Roll": "4",
+      "Standard": "5",
+      "Marks": "50",
+      "id": 6
+    }
+  ],
+  "teachers": [
+    {
+      "Name": "sharyar shamsi ",
+      "Subject": "computer language",
+      "id": 1
+    },
+    {
+      "Name": "amitabh",
+      "Subject": "maths",
+      "id": 2
+    },
+    {
+      "Name": "amitabh",
+      "Subject": "maths",
+      "id": 3
+    }
+  ]
 }

@@ -19,7 +19,7 @@ const actions = {
 };
 const mutations = {
     setTeachers: (state, teachers) => (state.teachers = teachers),
-    newTeachers: (state, teacher) => (state.teachers.unshift(teacher))
+    newTeachers: (state, teacher) => (state.teachers.push(teacher))
 };
 
 export default {

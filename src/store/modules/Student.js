@@ -18,10 +18,7 @@ const actions = {
 };
 const mutations = {
     setStudents: (state, students) => (state.students = students),
-    newStudents: (state, student) => {
-        state.students.unshift(student)
-        state.student = Object.assign({}, state, {});
-    }
+    newStudents: (state, student) => (state.students.push(student))
 };
 
 export default {

@@ -21,6 +21,7 @@ export default {
 .topNav {
   display: flex;
   border: 1px solid black;
+  background-color: skyblue;
 }
 .fa-school {
   display: flex;

@@ -1,11 +1,40 @@
 <template>
   <div class="students">
     <div class="student-list">
+      <div class="student-list-filter">
+        <span class="fas fa-search"></span
+        ><input
+          type="search"
+          placeholder="enter by name or by roll ...."
+          v-model="search"
+          class="filter"
+        />
+        <button class="filter-search">Search</button>
+      </div>
+      <div class="student-list-header">
+        <div class="student-name-header">
+          <h2 class="student-list-header-h2">Name</h2>
+        </div>
+        <div class="student-name-header">
+          <h2 class="student-list-header-h2">Roll</h2>
+        </div>
+        <div class="student-name-header">
+          <h2 class="student-list-header-h2">Class</h2>
+        </div>
+        <div class="student-name-header">
+          <h2 class="student-list-header-h2">Marks</h2>
+        </div>
+      </div>
       <ul class="stu-lst">
-        <li v-for="student in allStudents" :key="student.index">
-          {{ student.Name }}|{{ student.Roll }}|{{ student.Standard }}|{{
-            student.Marks
-          }}
+        <li
+          v-for="student in allStudents"
+          :key="student.index"
+          class="student-list-design"
+        >
+          <div class="student-name">{{ student.Name }}</div>
+          <div class="student-roll">{{ student.Roll }}</div>
+          <div class="student-standard">{{ student.Standard }}</div>
+          <div class="student-marks">{{ student.Marks }}</div>
         </li>
       </ul>
     </div>
@@ -16,6 +45,11 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "students",
   components: {},
+  data: function () {
+    return {
+      search: "",
+    };
+  },
   methods: {
     ...mapActions(["getStudents"]),
   },
@@ -26,4 +60,120 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.students {
+  display: flex;
+  border: 1px solid;
+  width: 1037px;
+  height: 626px;
+}
+.student-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px groove;
+  border-radius: 16px;
+  width: 1037px;
+  height: 557px;
+  box-shadow: 0px 5px 26px 0px;
+  margin: 32px;
+}
+.student-list-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid;
+  width: 900px;
+  height: 42px;
+  border-radius: 7px;
+  margin-left: 39px;
+  margin-top: 32px;
+  margin-bottom: -15px;
+  background-color: rgb(240, 143, 143);
+}
+.filter {
+  border-radius: 4px;
+  width: 230px;
+  height: 32px;
+  border: 1px groove;
+}
+.filter-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px groove;
+  margin-left: 11px;
+}
+.student-name-header {
+  display: flex;
+  border: 0px groove;
+  border-radius: 4px;
+  width: 244px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.student-list-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  width: 900px;
+  height: 42px;
+  border-radius: 7px;
+  margin-left: 39px;
+  margin-top: 32px;
+  margin-bottom: -15px;
+  background-color: black;
+}
+.student-list-header-h2 {
+  color: white;
+}
+.student-list-design {
+  display: flex;
+  border: 1px groove;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 4px;
+  width: 900px;
+  height: 37px;
+}
+.student-name {
+  display: flex;
+  border: 1px groove;
+  border-radius: 4px;
+  width: 244px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.student-roll {
+  display: flex;
+  border: 1px groove;
+  border-radius: 4px;
+  width: 244px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.student-standard {
+  display: flex;
+  border: 1px groove;
+  border-radius: 4px;
+  width: 244px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.student-marks {
+  display: flex;
+  border: 1px groove;
+  border-radius: 4px;
+  width: 244px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+</style>
