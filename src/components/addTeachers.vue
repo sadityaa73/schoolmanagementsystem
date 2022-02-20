@@ -45,6 +45,9 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1627637819794-fba32f82be16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .teacher-form {
   display: flex;

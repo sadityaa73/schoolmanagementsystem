@@ -66,6 +66,7 @@ export default {
   border: 1px solid;
   width: 1037px;
   height: 626px;
+  background-image: url("https://images.unsplash.com/photo-1615818499660-30bb5816e1c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
 }
 .student-list {
   display: flex;
@@ -88,7 +89,7 @@ export default {
   margin-left: 39px;
   margin-top: 32px;
   margin-bottom: -15px;
-  background-color: rgb(240, 143, 143);
+  background-color: orange;
 }
 .filter {
   border-radius: 4px;
@@ -121,7 +122,7 @@ export default {
   align-items: center;
   border: 1px solid;
   width: 900px;
-  height: 42px;
+  height: 26px;
   border-radius: 7px;
   margin-left: 39px;
   margin-top: 32px;

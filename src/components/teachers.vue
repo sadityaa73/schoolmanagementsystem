@@ -1,40 +1,42 @@
 <template>
-  <div class="teachers-list">
-    <div class="teachers-list-filter">
-      <span class="fas fa-search"></span
-      ><input
-        type="search"
-        placeholder="enter by name or by roll ...."
-        class="filter"
-      />
-      <button class="filter-search">Search</button>
-    </div>
-    <div class="teachers-list-header">
-      <div class="teachers-name-header">
-        <h2 class="teachers-list-header-h2">Id</h2>
+  <div class="teacher-main">
+    <div class="teachers-list">
+      <div class="teachers-list-filter">
+        <span class="fas fa-search"></span
+        ><input
+          type="search"
+          placeholder="enter by name or by roll ...."
+          class="filter"
+        />
+        <button class="filter-search">Search</button>
       </div>
-      <div class="teachers-name-header">
-        <h2 class="teachers-list-header-h2">Name</h2>
+      <div class="teachers-list-header">
+        <div class="teachers-name-header">
+          <h2 class="teachers-list-header-h2">Id</h2>
+        </div>
+        <div class="teachers-name-header">
+          <h2 class="teachers-list-header-h2">Name</h2>
+        </div>
+        <div class="teachers-name-header">
+          <h2 class="teachers-list-header-h2">Subject</h2>
+        </div>
+        <div class="teachers-name-header">
+          <h2 class="teachers-list-header-h2"></h2>
+        </div>
       </div>
-      <div class="teachers-name-header">
-        <h2 class="teachers-list-header-h2">Subject</h2>
+      <div class="teach">
+        <ul class="teacher">
+          <li
+            v-for="teacher in allTeachers"
+            :key="teacher.id"
+            class="teacher-list"
+          >
+            <div class="teacher-id">{{ teacher.id }}</div>
+            <div class="teacher-name">{{ teacher.Name }}</div>
+            <div class="teacher-subject">{{ teacher.Subject }}</div>
+          </li>
+        </ul>
       </div>
-      <div class="teachers-name-header">
-        <h2 class="teachers-list-header-h2"></h2>
-      </div>
-    </div>
-    <div class="teach">
-      <ul class="teacher">
-        <li
-          v-for="teacher in allTeachers"
-          :key="teacher.id"
-          class="teacher-list"
-        >
-          <div class="teacher-id">{{ teacher.id }}</div>
-          <div class="teacher-name">{{ teacher.Name }}</div>
-          <div class="teacher-subject">{{ teacher.Subject }}</div>
-        </li>
-      </ul>
     </div>
   </div>
 </template>
@@ -50,6 +52,13 @@ export default {
 };
 </script>
 <style scoped>
+.teacher-main {
+  display: flex;
+  border: 1px solid;
+  width: 1037px;
+  height: 626px;
+  background-image: url("https://images.unsplash.com/photo-1615818499660-30bb5816e1c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+}
 .teacher-list {
   display: flex;
 }
@@ -74,7 +83,7 @@ export default {
   margin-left: 39px;
   margin-top: 32px;
   margin-bottom: -15px;
-  background-color: rgb(240, 143, 143);
+  background-color: orange;
 }
 .filter {
   border-radius: 4px;
@@ -107,7 +116,7 @@ export default {
   align-items: center;
   border: 1px solid;
   width: 900px;
-  height: 42px;
+  height: 26px;
   border-radius: 7px;
   margin-left: 39px;
   margin-top: 32px;

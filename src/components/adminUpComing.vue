@@ -13,4 +13,18 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.upComing-activities {
+  display: flex;
+  border: 1px solid white;
+  width: 102px;
+  height: 83px;
+  border-radius: 9px;
+  justify-content: center;
+  align-items: center;
+}
+.fa-calendar-check {
+  font-size: 38px;
+  color: orange;
+}
+</style>
