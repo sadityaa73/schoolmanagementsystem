@@ -52,6 +52,15 @@ export default {
   },
   methods: {
     ...mapActions(["getStudents"]),
+    searched() {
+      const Names = this.allStudents;
+      const results = Names.filter(checkNames);
+
+      checkNames = function (Names) {
+        console.log(checkNames);
+        return Names.startsWith("this.search");
+      };
+    },
   },
 
   computed: { ...mapGetters(["allStudents"]) },
