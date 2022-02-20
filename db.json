@@ -1,4 +1,18 @@
 {
-    "students": [],
-    "teachers": []
+  "students": [
+    {
+      "Name": "aditya praksh",
+      "Roll": "01",
+      "Standard": "10",
+      "Marks": "85",
+      "id": 1
+    }
+  ],
+  "teachers": [
+    {
+      "Name": "xyz",
+      "Subject": "all subjects",
+      "id": 1
+    }
+  ]
 }

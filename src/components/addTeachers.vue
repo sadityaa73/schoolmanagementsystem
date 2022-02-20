@@ -35,6 +35,9 @@ export default {
         Name: this.teach.Name,
         Subject: this.teach.Subject,
       });
+      alert("your Entry is Submitted");
+      this.teach.Name = "";
+      this.teach.Subject = "";
     },
   },
 };

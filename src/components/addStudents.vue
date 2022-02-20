@@ -56,6 +56,11 @@ export default {
         Standard: this.student.standard,
         Marks: this.student.marks,
       });
+      alert("your Entry is submitted");
+      this.student.name = "";
+      this.student.roll = "";
+      this.student.standard = "";
+      this.student.marks = "";
     },
   },
 };

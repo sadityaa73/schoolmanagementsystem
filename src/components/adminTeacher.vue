@@ -2,14 +2,30 @@
   <div class="admin-teacher">
     <div class="teacher-count">
       <span class="fas fa-chalkboard-teacher"></span>
-      <p class="Admin-activity"></p>
+      <p
+        v-for="teacher in allTeachers"
+        :key="teacher.id"
+        class="Admin-teacher-activity"
+      >
+        {{ teacher.id }}
+      </p>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
   data: function () {
     return {};
+  },
+  methods: {
+    ...mapActions(["getTeachers"]),
+  },
+  computed: {
+    ...mapGetters(["allTeachers"]),
+  },
+  created() {
+    this.getTeachers();
   },
 };
 </script>
@@ -26,5 +42,15 @@ export default {
 .fa-chalkboard-teacher {
   font-size: 38px;
   color: orange;
+}
+.Admin-teacher-activity {
+  font-family: math;
+  font-size: 29px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-left: 7px;
 }
 </style>
