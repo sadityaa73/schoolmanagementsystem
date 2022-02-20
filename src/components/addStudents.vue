@@ -51,10 +51,10 @@ export default {
     ...mapActions(["addStudent"]),
     newStudent() {
       this.addStudent({
-        Name: this.student.name,
-        Roll: this.student.roll,
-        Standard: this.student.standard,
-        Marks: this.student.marks,
+        Name: this.student.name.toUpperCase(),
+        Roll: this.student.roll.toUpperCase(),
+        Standard: this.student.standard.toUpperCase(),
+        Marks: this.student.marks.toUpperCase(),
       });
       alert("your Entry is submitted");
       this.student.name = "";

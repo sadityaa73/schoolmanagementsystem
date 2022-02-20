@@ -2,13 +2,7 @@
   <div class="admin-student">
     <div class="student-count">
       <span class="fas fa-user-graduate"></span>
-      <p
-        v-for="student in allStudents"
-        :key="student.index"
-        class="Admin-student-count"
-      >
-        {{ student.id }}
-      </p>
+      <p class="Admin-student-count">{{ allStudents.length }}</p>
     </div>
   </div>
 </template>

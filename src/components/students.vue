@@ -9,7 +9,7 @@
           v-model="search"
           class="filter"
         />
-        <button class="filter-search">Search</button>
+        <button class="filter-search" @click="searched">Search</button>
       </div>
       <div class="student-list-header">
         <div class="student-name-header">
@@ -53,13 +53,13 @@ export default {
   methods: {
     ...mapActions(["getStudents"]),
     searched() {
-      const Names = this.allStudents;
-      const results = Names.filter(checkNames);
+      const studentNames = this.allStudents;
+      var results = studentNames.filter(NamesFilter);
 
-      checkNames = function (Names) {
-        console.log(checkNames);
-        return Names.startsWith("this.search");
-      };
+      function NamesFilter(studentNames) {
+        return studentNames.toString().startsWith("this.search");
+      }
+      console.log(results);
     },
   },
 

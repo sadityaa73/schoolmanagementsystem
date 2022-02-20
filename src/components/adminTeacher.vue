@@ -2,12 +2,8 @@
   <div class="admin-teacher">
     <div class="teacher-count">
       <span class="fas fa-chalkboard-teacher"></span>
-      <p
-        v-for="teacher in allTeachers"
-        :key="teacher.id"
-        class="Admin-teacher-activity"
-      >
-        {{ teacher.id }}
+      <p class="Admin-teacher-activity">
+        {{ allTeachers.length }}
       </p>
     </div>
   </div>

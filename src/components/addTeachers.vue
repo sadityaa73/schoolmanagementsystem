@@ -32,8 +32,8 @@ export default {
     ...mapActions(["addTeachers"]),
     submit() {
       this.addTeachers({
-        Name: this.teach.Name,
-        Subject: this.teach.Subject,
+        Name: this.teach.Name.toUpperCase(),
+        Subject: this.teach.Subject.toUpperCase(),
       });
       alert("your Entry is Submitted");
       this.teach.Name = "";

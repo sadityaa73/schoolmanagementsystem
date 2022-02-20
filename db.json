@@ -6,6 +6,13 @@
       "Standard": "10",
       "Marks": "85",
       "id": 1
+    },
+    {
+      "Name": "ADITYA SINGH",
+      "Roll": "002",
+      "Standard": "9",
+      "Marks": "82",
+      "id": 2
     }
   ],
   "teachers": [
@@ -13,6 +20,11 @@
       "Name": "xyz",
       "Subject": "all subjects",
       "id": 1
+    },
+    {
+      "Name": "RAMU",
+      "Subject": "MATHS",
+      "id": 2
     }
   ]
 }
