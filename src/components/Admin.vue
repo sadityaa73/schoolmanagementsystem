@@ -40,7 +40,7 @@ export default {
   width: 956px;
   height: 126px;
   border-radius: 19px;
-  margin-left: 39px;
+  margin-left: 160px;
   margin-top: 28px;
   box-shadow: 0px 5px 26px 0px;
 }

@@ -25,9 +25,21 @@
           <h2 class="student-list-header-h2">Marks</h2>
         </div>
       </div>
-      <ul class="stu-lst">
+      <ul v-if="search.length === 0" class="stu-lst">
         <li
           v-for="student in allStudents"
+          :key="student.index"
+          class="student-list-design"
+        >
+          <div class="student-name">{{ student.Name }}</div>
+          <div class="student-roll">{{ student.Roll }}</div>
+          <div class="student-standard">{{ student.Standard }}</div>
+          <div class="student-marks">{{ student.Marks }}</div>
+        </li>
+      </ul>
+      <ul v-else class="stu-lst">
+        <li
+          v-for="student in totalStudents"
           :key="student.index"
           class="student-list-design"
         >
@@ -48,22 +60,28 @@ export default {
   data: function () {
     return {
       search: "",
+      totalStudents: this.allStudents,
     };
   },
   methods: {
     ...mapActions(["getStudents"]),
     searched() {
       const studentNames = this.allStudents;
-      var results = studentNames.filter(NamesFilter);
-
-      function NamesFilter(studentNames) {
-        return studentNames.toString().startsWith("this.search");
-      }
+      console.log(this);
+      var results = studentNames.filter(this.NamesFilter);
       console.log(results);
+      this.totalStudents = results;
+    },
+
+    NamesFilter: function (studentNames) {
+      console.log(studentNames);
+      return studentNames.Name.startsWith(this.search);
     },
   },
 
-  computed: { ...mapGetters(["allStudents"]) },
+  computed: {
+    ...mapGetters(["allStudents"]),
+  },
   created() {
     this.getStudents();
   },
@@ -73,7 +91,7 @@ export default {
 .students {
   display: flex;
   border: 1px solid;
-  width: 1037px;
+  width: 100%;
   height: 626px;
   background-image: url("https://images.unsplash.com/photo-1615818499660-30bb5816e1c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
 }
@@ -86,6 +104,7 @@ export default {
   height: 557px;
   box-shadow: 0px 5px 26px 0px;
   margin: 32px;
+  margin-left: 120px;
 }
 .student-list-filter {
   display: flex;

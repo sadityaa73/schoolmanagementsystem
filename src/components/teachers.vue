@@ -6,9 +6,10 @@
         ><input
           type="search"
           placeholder="enter by name or by roll ...."
+          v-model="search"
           class="filter"
         />
-        <button class="filter-search">Search</button>
+        <button class="filter-search" @click="searched">Search</button>
       </div>
       <div class="teachers-list-header">
         <div class="teachers-name-header">
@@ -25,9 +26,20 @@
         </div>
       </div>
       <div class="teach">
-        <ul class="teacher">
+        <ul v-if="search.length === 0" class="teacher">
           <li
             v-for="teacher in allTeachers"
+            :key="teacher.id"
+            class="teacher-list"
+          >
+            <div class="teacher-id">{{ teacher.id }}</div>
+            <div class="teacher-name">{{ teacher.Name }}</div>
+            <div class="teacher-subject">{{ teacher.Subject }}</div>
+          </li>
+        </ul>
+        <ul v-else class="teacher">
+          <li
+            v-for="teacher in totalTeachers"
             :key="teacher.id"
             class="teacher-list"
           >
@@ -44,7 +56,27 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "teacher",
-  methods: { ...mapActions(["getTeachers"]) },
+  data: function () {
+    return {
+      search: "",
+      totalTeachers: this.allTeachers,
+    };
+  },
+  methods: {
+    ...mapActions(["getTeachers"]),
+    searched() {
+      const teacherNames = this.allTeachers;
+      console.log(this);
+      var results = teacherNames.filter(this.NamesFilter);
+      console.log(results);
+      this.totalTeachers = results;
+    },
+
+    NamesFilter: function (teacherNames) {
+      console.log(teacherNames);
+      return teacherNames.Name.startsWith(this.search);
+    },
+  },
   computed: { ...mapGetters(["allTeachers"]) },
   created() {
     this.getTeachers();
@@ -55,7 +87,7 @@ export default {
 .teacher-main {
   display: flex;
   border: 1px solid;
-  width: 1037px;
+  width: 100%;
   height: 626px;
   background-image: url("https://images.unsplash.com/photo-1615818499660-30bb5816e1c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
 }
@@ -71,6 +103,7 @@ export default {
   height: 557px;
   box-shadow: 0px 5px 26px 0px;
   margin: 32px;
+  margin-left: 120px;
 }
 .teachers-list-filter {
   display: flex;

@@ -118,4 +118,14 @@ export default {
   margin-right: 20px;
   margin-bottom: 11px;
 }
+.btn {
+  display: flex;
+  border: 1px solid;
+  border-radius: 7px;
+  width: 144px;
+  height: 43px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 18px;
+}
 </style>
